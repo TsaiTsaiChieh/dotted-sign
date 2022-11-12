@@ -6,6 +6,7 @@ export const Color = {
   },
   secondary: {
     '50': '#964900',
+    '50-a70': 'rgba(150, 73, 0, 0.7)',
   },
   black: {
     '50': '#231815',
