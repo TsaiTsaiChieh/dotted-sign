@@ -10,9 +10,13 @@ export const Color = {
   },
   black: {
     '50': '#231815',
+    '100': '#000000',
   },
   blue: {
     '50': '#2FBDF0',
     '100': '#B0DFF8',
+  },
+  white: {
+    '50': '#FFFFFF',
   },
 } as const
