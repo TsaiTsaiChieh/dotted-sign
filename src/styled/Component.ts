@@ -19,3 +19,6 @@ export const BTN = styled.button<{
     color: ${(props) => props.hoverColor};
   }
 `
+export const LogoVertical = styled.img`
+  content: url("/images/logo-vertical.svg");
+`
