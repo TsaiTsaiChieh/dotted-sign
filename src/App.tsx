@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Home />
-      <ShouldAuth visible={false} />
+      <ShouldAuth />
     </>
   )
 }
