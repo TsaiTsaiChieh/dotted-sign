@@ -61,6 +61,7 @@ export const Close = styled.img`
   right: 28px;
   background: ${Color.primary[50]};
   border-radius: 50%;
+  cursor: pointer;
   &:hover {
     background: ${Color.secondary[50]};
   }
