@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import {Color} from '../constants/Variables'
 
-export const ShouldAuthContainer = styled.div<{visible: boolean}>`
+export const AuthContainer = styled.div<{visible: boolean}>`
   width: 558px;
   height: 734px;
   margin: auto;
