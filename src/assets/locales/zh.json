@@ -11,7 +11,7 @@
     "registerImmediately": "立即註冊"
   },
   "warnings": {
-    "should_auth": "您尚未申請進入家園的許可證<br/>請先去找點點<1>‘’登入註冊‘’</1>喔！"
+    "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
