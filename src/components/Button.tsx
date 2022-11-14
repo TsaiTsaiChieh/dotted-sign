@@ -6,8 +6,9 @@ interface Props {
   content: string
   padding?: string
   fz?: number
+  onClick?: () => void
 }
-const Button = ({style = 'main', content, padding, fz}: Props) => {
+const Button = ({style = 'main', content, padding, fz, onClick}: Props) => {
   let bg: string = Color.primary[50]
   let color: string = Color.black[100]
   let hoverBg: string = Color.secondary[50]
@@ -30,6 +31,7 @@ const Button = ({style = 'main', content, padding, fz}: Props) => {
       hoverBg={hoverBg}
       hoverColor={hoverColor}
       fz={fz}
+      onClick={onClick}
     >
       {content}
     </BTN>
