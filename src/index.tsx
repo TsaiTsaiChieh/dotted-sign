@@ -1,4 +1,5 @@
 import './styles/App.scss'
+import './i18n'
 
 import React from 'react'
 
