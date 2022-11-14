@@ -7,8 +7,8 @@ const Header = () => {
       <div className='flex container'>
         <Logo />
         <div className='flex btns'>
-          <Button content='登入/註冊' style='white' padding={'10px 16px'} />
-          <Button content='歷史紀錄' style='white' padding={'10px 21px'} />
+          <Button content='登入/註冊' style='second' padding='10px 16px' />
+          <Button content='歷史紀錄' style='second' padding='10px 21px' />
         </div>
       </div>
     </Navbar>
