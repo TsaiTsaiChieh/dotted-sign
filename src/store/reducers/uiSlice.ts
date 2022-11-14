@@ -4,6 +4,7 @@ import type {PayloadAction} from '@reduxjs/toolkit'
 const initialState: uiState = {
   modals: {
     shouldAuthVisible: false,
+    registerVisible: true,
   },
 }
 
@@ -14,8 +15,11 @@ export const uiSlice = createSlice({
     setShouldAuthVisible: (state, {payload}: PayloadAction<boolean>) => {
       state.modals.shouldAuthVisible = payload
     },
+    setRegisterVisible: (state, {payload}: PayloadAction<boolean>) => {
+      state.modals.registerVisible = payload
+    },
   },
 })
 
-export const {setShouldAuthVisible} = uiSlice.actions
+export const {setShouldAuthVisible, setRegisterVisible} = uiSlice.actions
 export default uiSlice.reducer
