@@ -21,4 +21,7 @@ export const Color = {
   white: {
     '50': '#FFFFFF',
   },
+  red: {
+    '50': '#F45151',
+  },
 } as const
