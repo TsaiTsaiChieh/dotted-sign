@@ -1,4 +1,5 @@
 import ShouldAuth from './components/modals/ShouldAuth'
+import Auth from './pages/auth/Auth'
 import Home from './pages/home/Home'
 
 const App = () => {
@@ -6,6 +7,7 @@ const App = () => {
     <>
       <Home />
       <ShouldAuth />
+      <Auth />
     </>
   )
 }
