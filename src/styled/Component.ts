@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const BTN = styled.button<{
   bg: string
   color: string
+  hoverBg: string
+  hoverColor: string
   padding?: string
   fz?: number
 }>`
@@ -12,4 +14,8 @@ export const BTN = styled.button<{
   color: ${(props) => props.color};
   border-radius: 3px;
   font-weight: bold;
+  &:hover {
+    background: ${(props) => props.hoverBg};
+    color: ${(props) => props.hoverColor};
+  }
 `
