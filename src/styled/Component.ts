@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import {Color} from '../constants/Variables'
+
 export const BTN = styled.button<{
   bg: string
   color: string
@@ -21,4 +23,19 @@ export const BTN = styled.button<{
 `
 export const LogoVertical = styled.img`
   content: url("/images/logo-vertical.svg");
+`
+export const FormErrorWrap = styled.div<{visible: boolean}>`
+display: flex;
+align-items: center;
+gap:3px;
+visibility: ${(props) => props.visible ? 'visible' : 'hidden'};
+`
+export const FormErrorIcon = styled.img`
+content: url('/images/warning.svg');
+width: 20px;
+`
+export const ErrorMsg = styled.span`
+font-size:16px ;
+font-weight: bold;
+color: ${Color.red[50]};
 `
