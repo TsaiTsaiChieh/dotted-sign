@@ -1,7 +1,10 @@
 import {Trans, useTranslation} from 'react-i18next'
 
 import {useAppDispatch, useAppSelector} from '../../store/hook'
-import {setShouldAuthVisible} from '../../store/reducers/uiSlice'
+import {
+  setRegisterVisible,
+  setShouldAuthVisible,
+} from '../../store/reducers/uiSlice'
 import {
   AuthContainer,
   Close,
@@ -19,6 +22,10 @@ const ShouldAuth = () => {
   const close = () => {
     dispatch(setShouldAuthVisible(false))
   }
+  const go2Register = () => {
+    dispatch(setShouldAuthVisible(false))
+    dispatch(setRegisterVisible(true))
+  }
   return (
     <>
       <Mask visible={modals.shouldAuthVisible} />
@@ -27,7 +34,11 @@ const ShouldAuth = () => {
         <ShouldAuthWarning>
           <Trans i18nKey='warnings.should_auth' components={{1: <span />}} />
         </ShouldAuthWarning>
-        <Button content={t('buttons.register')} style='main-yellow' />
+        <Button
+          content={t('buttons.register')}
+          style='main-yellow'
+          onClick={go2Register}
+        />
         <SadBee />
         <Close onClick={close} />
       </AuthContainer>

@@ -4,7 +4,7 @@ import type {PayloadAction} from '@reduxjs/toolkit'
 const initialState: uiState = {
   modals: {
     shouldAuthVisible: false,
-    registerVisible: true,
+    registerVisible: false,
   },
 }
 
