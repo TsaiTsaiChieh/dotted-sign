@@ -1,3 +1,5 @@
+import {useTranslation} from 'react-i18next'
+
 import Button from '../../components/Button'
 import {
   BannerWrap,
@@ -11,12 +13,14 @@ import {
 } from '../../styled/Home'
 
 const Banner = () => {
+  const {t} = useTranslation()
+
   return (
     <BannerWrap>
       <LeftSide>
         <Title />
-        <SubTitle>記錄你的點點滴滴</SubTitle>
-        <Button content='點我進入' fz={44.16} padding={'38px 66px'} />
+        <SubTitle>{t('titles.home')}</SubTitle>
+        <Button content={t('buttons.enter')} fz={44.16} padding={'38px 66px'} />
       </LeftSide>
       <RightSide>
         <BeeWrap>
