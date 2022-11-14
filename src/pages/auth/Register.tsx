@@ -1,16 +1,12 @@
-import {useForm} from 'react-hook-form'
+
 import {useTranslation} from 'react-i18next'
 
-import Button from '../../components/Button'
-import FormError from '../../components/FormError'
 import {useAppDispatch, useAppSelector} from '../../store/hook'
 import {setRegisterVisible} from '../../store/reducers/uiSlice'
 import {
   FatBee,
   FBIcon,
   GoogleIcon,
-  RegisterForm,
-  RegisterFormWrap,
   RegisterTitle,
   RegisterTitleWrap,
   ThirdPartyWrap,
@@ -18,6 +14,7 @@ import {
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
+import RegisterForms from './RegisterForms'
 
 const Register = () => {
   const dispatch = useAppDispatch()
@@ -27,11 +24,6 @@ const Register = () => {
   const close = () => {
     dispatch(setRegisterVisible(false))
   }
-  const {
-    register,
-    handleSubmit,
-    formState: {errors},
-  } = useForm()
 
   return (
     <>
@@ -41,33 +33,7 @@ const Register = () => {
           <LogoVertical />
           <RegisterTitle>{t('titles.register')}</RegisterTitle>
         </RegisterTitleWrap>
-        <RegisterFormWrap onSubmit={handleSubmit((data) => console.log(data))}>
-          <RegisterForm
-            placeholder={t('placeholders.email')!}
-            {...register('email', {required: true})}
-          />
-          <FormError msg={'Email is required.'} visible={!!errors.email} />
-          <RegisterForm
-            placeholder={t('placeholders.password')!}
-            {...register('password', {required: true})}
-          />
-          <FormError
-            msg={'Password is required.'}
-            visible={!!errors.password}
-          />
-          <RegisterForm
-            placeholder={t('placeholders.confirm_password')!}
-            {...register('confirmPassword', {required: true})}
-          />
-          <FormError
-            msg={'Confirm password is required.'}
-            visible={!!errors.confirmPassword}
-          />
-          <Button
-            content={t('buttons.registerImmediately')}
-            padding='10px 130px'
-          />
-        </RegisterFormWrap>
+        <RegisterForms />
         <ThirdPartyWrap>
           <GoogleIcon />
           <FBIcon />
