@@ -68,8 +68,17 @@ export const RightSide = styled.div`
   display: flex;
   align-items: center;
 `
+export const BeeWrap = styled.div`
+  position: relative;
+`
 export const Bee = styled.img`
   width: 100%;
   height: 327px;
   content: url("/images/bee-with-line.svg");
+`
+export const Beryl = styled.img`
+  content: url("/images/beryl.svg");
+  position: absolute;
+  top: 90px;
+  right: 15%;
 `

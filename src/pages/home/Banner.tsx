@@ -6,6 +6,8 @@ import {
   Title,
   SubTitle,
   Bee,
+  BeeWrap,
+  Beryl,
 } from '../../styled/Home'
 
 const Banner = () => {
@@ -17,7 +19,10 @@ const Banner = () => {
         <Button content='點我進入' fz={44.16} padding={'38px 66px'} />
       </LeftSide>
       <RightSide>
-        <Bee />
+        <BeeWrap>
+          <Bee />
+          <Beryl />
+        </BeeWrap>
       </RightSide>
     </BannerWrap>
   )
