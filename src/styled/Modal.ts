@@ -41,6 +41,9 @@ export const ShouldAuthWarning = styled.span`
   line-height: 29px;
   margin: 32px 0 54px;
   padding: 0 138px;
+  span {
+    color: ${Color.primary[50]};
+  }
 `
 export const SadBee = styled.img`
   content: url("/images/bee-sad.svg");

@@ -65,6 +65,7 @@ export const SubTitle = styled.h1`
   color: black;
   font-size: 38.74px;
   margin: 32px 0 48px;
+  font-weight: bold;
 `
 export const RightSide = styled.div`
   width: 50%;
