@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {Color} from '../constants/Variables'
 
 export const AuthContainer = styled.div<{visible: boolean}>`
-  width: 558px;
+  width: 588px;
   height: 734px;
   margin: auto;
   display: ${(props) => (props.visible ? 'flex' : 'none')};
