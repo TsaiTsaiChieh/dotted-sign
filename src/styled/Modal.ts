@@ -20,7 +20,8 @@ export const ShouldAuthContainer = styled.div<{visible: boolean}>`
   box-shadow: 0px 4px 5px 4px ${Color.black['100-p25']};
   border-radius: 6px;
 `
-export const Mask = styled.div`
+export const Mask = styled.div<{visible: boolean}>`
+  display: ${(props) => (props.visible ? 'block' : 'none')};
   width: 100vw;
   height: 100vh;
   position: absolute;
