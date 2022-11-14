@@ -1,6 +1,7 @@
 {
   "titles": {
-    "home": "記錄你的點點滴滴"
+    "home": "記錄你的點點滴滴",
+    "register": "申請家園許可證"
   },
   "buttons": {
     "login": "登入/註冊",
