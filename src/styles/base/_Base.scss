@@ -1,6 +1,24 @@
+@font-face
+{
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Inter Regular"), url("/assets/fonts/Inter-Regular.ttf");
+}
+
+body
+{
+  font-family: "Inter", -apple-system, BlinkMacSystemFont;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #root
 {
   background: $color-primary-50;
+  position: relative;
+  background: $color-black-100;
 }
 
 .top
