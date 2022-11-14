@@ -32,6 +32,9 @@ export const Navbar = styled.nav`
 `
 export const BTNWrap = styled.div`
   display: flex;
+  img {
+    width: 100%;
+  }
 `
 export const Logo = styled.img`
   width: 220px;
@@ -77,8 +80,10 @@ export const Bee = styled.img`
   content: url("/images/bee-with-line.svg");
 `
 export const Beryl = styled.img`
+  width: 50%;
+  height: 90px;
   content: url("/images/beryl.svg");
   position: absolute;
-  top: 90px;
-  right: 15%;
+  top: 85px;
+  right: 0;
 `
