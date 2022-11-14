@@ -16,7 +16,7 @@ const persistConfig = {
   key: 'root',
   storage,
   whitelist: [],
-  blacklist: [],
+  blacklist: ['ui'],
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store = configureStore({
