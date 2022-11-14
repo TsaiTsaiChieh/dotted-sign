@@ -1,8 +1,12 @@
+import ShouldAuth from './components/modals/ShouldAuth'
 import Home from './pages/home/Home'
 
 const App = () => {
   return (
-    <Home />
+    <>
+      <Home />
+      <ShouldAuth visible={false} />
+    </>
   )
 }
 
