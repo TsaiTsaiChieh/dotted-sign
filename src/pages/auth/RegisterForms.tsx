@@ -42,7 +42,6 @@ const RegisterForms = () => {
     try {
       const user = await nativeRegister(data)
       await createData('users', user.email, user)
-      setError('')
       dispatch(setIsAuth(true))
       dispatch(setUserData(user))
     } catch (error: any) {
@@ -52,7 +51,10 @@ const RegisterForms = () => {
   }
 
   return (
-    <RegisterFormWrap onSubmit={handleSubmit(onSubmit)}>
+    <RegisterFormWrap
+      onSubmit={handleSubmit(onSubmit)}
+      onClick={() => setError('')}
+    >
       <RegisterForm
         placeholder={t('placeholders.email')!}
         {...register('email')}
