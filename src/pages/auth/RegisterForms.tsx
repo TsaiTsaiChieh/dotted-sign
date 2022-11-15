@@ -1,3 +1,5 @@
+import {useState} from 'react'
+
 import {yupResolver} from '@hookform/resolvers/yup'
 import {useForm} from 'react-hook-form'
 import {useTranslation} from 'react-i18next'
@@ -5,32 +7,52 @@ import * as yup from 'yup'
 
 import Button from '../../components/Button'
 import FormError from '../../components/FormError'
+import {createData} from '../../services/curd'
+import {nativeRegister} from '../../services/user'
+import {useAppDispatch} from '../../store/hook'
+import {setIsAuth, setUserData} from '../../store/reducers/authSlice'
 import {RegisterFormWrap, RegisterForm} from '../../styled/Auth'
 
 const RegisterForms = () => {
   const {t} = useTranslation()
+  const dispatch = useAppDispatch()
+  const [error, setError] = useState<string>('')
   const schema = yup.object().shape({
-    email: yup.string().required(t('warnings.field_should_fill')!),
+    email: yup
+      .string()
+      .required(t('validate.field_should_fill')!)
+      .email(t('validate.email')!),
     password: yup
       .string()
-      .required(t('warnings.field_should_fill')!)
-      .min(4, t('warnings.min_password')!)
-      .max(16, t('warnings.max_password')!),
+      .required(t('validate.field_should_fill')!)
+      .min(6, t('validate.min_password')!)
+      .max(16, t('validate.max_password')!),
     cPassword: yup
       .string()
-      .required(t('warnings.field_should_fill')!)
-      .oneOf([yup.ref('password'), null], t('warnings.c_password_not_match')!),
+      .required(t('validate.field_should_fill')!)
+      .oneOf([yup.ref('password'), null], t('validate.c_password_not_match')!),
   })
   const {
     register,
     handleSubmit,
     formState: {errors},
     reset,
-  } = useForm({resolver: yupResolver(schema)})
-  const onSubmit = (data: any) => {
-    console.log(data)
+  } = useForm<RegisterForm>({resolver: yupResolver(schema)})
+  const onSubmit = async (data: RegisterForm) => {
+    try {
+      const user = await nativeRegister(data)
+      const {email, uid} = user
+      const userData = {uid, name: null, email, photo: null}
+      await createData('users', email, userData)
+      setError('')
+      dispatch(setIsAuth(true))
+      dispatch(setUserData(userData))
+    } catch (error: any) {
+      setError(t(`errors.${error}`)!)
+    }
     reset()
   }
+
   return (
     <RegisterFormWrap onSubmit={handleSubmit(onSubmit)}>
       <RegisterForm
@@ -58,6 +80,7 @@ const RegisterForms = () => {
         visible={!!errors.cPassword}
       />
       <Button content={t('buttons.registerImmediately')} padding='10px 130px' />
+      <FormError msg={error} visible={error !== ''} />
     </RegisterFormWrap>
   )
 }
