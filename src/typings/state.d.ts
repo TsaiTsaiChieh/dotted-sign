@@ -4,3 +4,6 @@ interface uiState {
     registerVisible: boolean
   }
 }
+interface authState {
+  registerIsPass: boolean
+}
