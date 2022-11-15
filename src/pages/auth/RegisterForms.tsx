@@ -10,24 +10,37 @@ import {RegisterFormWrap, RegisterForm} from '../../styled/Auth'
 const RegisterForms = () => {
   const {t} = useTranslation()
   const schema = yup.object().shape({
-    password: yup.string()
-      .min(4, 'Password length should be at least 4 characters')
-      .max(12, 'Password cannot exceed more than 12 characters'),
+    email: yup.string().required(t('warnings.field_should_fill')!),
+    password: yup
+      .string()
+      .required(t('warnings.field_should_fill')!)
+      .min(4, t('warnings.min_password')!)
+      .max(16, t('warnings.max_password')!),
+    cPassword: yup
+      .string()
+      .required(t('warnings.field_should_fill')!)
+      .oneOf([yup.ref('password'), null], t('warnings.c_password_not_match')!),
   })
   const {
     register,
     handleSubmit,
-    watch,
     formState: {errors},
+    reset,
   } = useForm({resolver: yupResolver(schema)})
-
+  const onSubmit = (data: any) => {
+    console.log(data)
+    reset()
+  }
   return (
-    <RegisterFormWrap onSubmit={handleSubmit((data) => console.log(data))}>
+    <RegisterFormWrap onSubmit={handleSubmit(onSubmit)}>
       <RegisterForm
         placeholder={t('placeholders.email')!}
-        {...register('email', {required: true})}
+        {...register('email')}
       />
-      <FormError msg={'Email is required.'} visible={!!errors.email} />
+      <FormError
+        msg={errors.email?.message as string}
+        visible={!!errors.email}
+      />
       <RegisterForm
         placeholder={t('placeholders.password')!}
         {...register('password')}
@@ -37,23 +50,14 @@ const RegisterForms = () => {
         visible={!!errors.password}
       />
       <RegisterForm
-        placeholder={t('placeholders.confirm_password')!}
-        {...register('confirmPassword', {
-          validate: (val: string) => {
-            if (watch('password') !== val) {
-              return 'Your passwords do no match'
-            }
-          },
-        })}
+        placeholder={t('placeholders.c_password')!}
+        {...register('cPassword')}
       />
       <FormError
-        msg={errors.confirmPassword?.message as string}
-        visible={!!errors.confirmPassword}
+        msg={errors.cPassword?.message as string}
+        visible={!!errors.cPassword}
       />
-      <Button
-        content={t('buttons.registerImmediately')}
-        padding='10px 130px'
-      />
+      <Button content={t('buttons.registerImmediately')} padding='10px 130px' />
     </RegisterFormWrap>
   )
 }
