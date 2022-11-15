@@ -1,6 +1,18 @@
-import {createUserWithEmailAndPassword} from 'firebase/auth'
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from 'firebase/auth'
 
 import {auth} from '../firebase'
+
+const errorHandle = (error: any) => {
+  const errorCode = error.code
+  const errorMessage = error.message
+  console.error('firebase err: ', errorCode, errorMessage)
+  return errorMessage
+}
 
 export const nativeRegister = async (
   data: RegisterForm,
@@ -12,11 +24,31 @@ export const nativeRegister = async (
       data.password,
     )
     const {user} = userCredential
-    return Promise.resolve({uid: user.uid, email: user.email!})
+    return Promise.resolve({
+      uid: user.uid,
+      email: user.email!,
+      photo: null,
+      name: null,
+    })
   } catch (error: any) {
-    const errorCode = error.code
-    const errorMessage = error.message
-    console.error('firebase err: ', errorCode, errorMessage)
-    return Promise.reject(errorCode)
+    return Promise.reject(errorHandle(error))
+  }
+}
+
+export const googleLogin = async (): Promise<RegisterResType> => {
+  const provider = new GoogleAuthProvider()
+  const auth = getAuth()
+  try {
+    const result = await signInWithPopup(auth, provider)
+    const {user} = result
+    console.log(user)
+    return Promise.resolve({
+      uid: user.uid,
+      name: user.displayName,
+      email: user.email!,
+      photo: user.photoURL,
+    })
+  } catch (error: any) {
+    return Promise.reject(errorHandle(error))
   }
 }
