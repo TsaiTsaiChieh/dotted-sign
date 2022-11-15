@@ -11,7 +11,7 @@ const errorHandle = (error: any) => {
   const errorCode = error.code
   const errorMessage = error.message
   console.error('firebase err: ', errorCode, errorMessage)
-  return errorMessage
+  return errorCode
 }
 
 export const nativeRegister = async (
