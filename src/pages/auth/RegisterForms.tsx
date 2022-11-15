@@ -41,12 +41,10 @@ const RegisterForms = () => {
   const onSubmit = async (data: RegisterForm) => {
     try {
       const user = await nativeRegister(data)
-      const {email, uid} = user
-      const userData = {uid, name: null, email, photo: null}
-      await createData('users', email, userData)
+      await createData('users', user.email, user)
       setError('')
       dispatch(setIsAuth(true))
-      dispatch(setUserData(userData))
+      dispatch(setUserData(user))
     } catch (error: any) {
       setError(t(`errors.${error}`)!)
     }
