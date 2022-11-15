@@ -5,5 +5,7 @@ interface uiState {
   }
 }
 interface authState {
-  registerIsPass: boolean
+  isAuth: boolean
+  nativeRegisterIsPass: boolean
+  userData?: UserDataType
 }
