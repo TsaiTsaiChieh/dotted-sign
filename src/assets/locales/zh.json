@@ -10,19 +10,23 @@
     "register": "點我註冊",
     "registerImmediately": "立即註冊"
   },
+  "placeholders": {
+    "email": "請輸入電子郵件",
+    "password": "請輸入密碼",
+    "c_password": "請再輸入一次密碼"
+  },
   "warnings": {
     "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！"
   },
   "validate": {
-    "min_password": "密碼長度需超過4個字元",
+    "min_password": "密碼長度需超過6個字元",
     "max_password": "密碼長度不可超過16個字元",
     "field_should_fill": "欄位不可空白",
     "c_password_not_match": "密碼與第一次輸入的不相符",
     "email": "電子郵件格式不正確"
   },
-  "placeholders": {
-    "email": "請輸入電子郵件",
-    "password": "請輸入密碼",
-    "c_password": "請再輸入一次密碼"
+  "errors": {
+    "auth/email-already-in-use": "電子郵件已被註冊使用",
+    "unknown": "未知的錯誤"
   }
 }
