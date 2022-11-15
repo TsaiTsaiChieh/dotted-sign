@@ -7,6 +7,7 @@ export const RegisterContainer = styled(AuthContainer)`
 width:420px;
 height:484px;
 padding: 40px 84px 210px;
+overflow: hidden;
 `
 export const RegisterTitleWrap = styled.div`
 display: flex;
@@ -43,7 +44,7 @@ export const FatBee = styled.img`
 content: url('/images/fat-bee-normal.svg');
 position: absolute;
 width: 100%;
-bottom: 0;
+bottom: -10px;
 `
 export const ThirdPartyWrap = styled.div`
 display: flex;
@@ -56,4 +57,21 @@ cursor: pointer;
 export const FBIcon = styled.img`
 content: url('/images/fb.svg');
 cursor: pointer;
+`
+export const LoginContainer = styled(RegisterContainer)`
+width:380px;
+height:492px;
+padding: 32px 104px 210px;
+`
+export const LoginTitleWrap = styled(RegisterTitleWrap)`
+flex-direction:column ;
+`
+export const LoginTitle = styled(RegisterTitle)``
+export const LoginFormWrap = styled(RegisterFormWrap)`
+`
+export const LoginForm = styled(RegisterForm)`
+border: 3px solid ${Color.blue[50]};
+&::placeholder {
+color: ${Color.blue[50]};
+}
 `
