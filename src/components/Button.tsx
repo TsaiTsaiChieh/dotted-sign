@@ -2,7 +2,7 @@ import {Color} from '../constants/Variables'
 import {BTN} from '../styled/Component'
 
 interface Props {
-  style?: 'main' | 'second' | 'main-yellow'
+  style?: 'main' | 'second' | 'main-yellow' | 'blue-yellow'
   content: string
   padding?: string
   fz?: number
@@ -22,6 +22,12 @@ const Button = ({style = 'main', content, padding, fz, onClick}: Props) => {
   }
   if (style === 'main-yellow') {
     hoverBg = Color.primary[100]
+  }
+  if (style === 'blue-yellow') {
+    bg = Color.blue[50]
+    color = Color.white[50]
+    hoverBg = Color.primary[50]
+    hoverColor = Color.white[50]
   }
   return (
     <BTN
