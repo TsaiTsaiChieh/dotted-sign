@@ -11,11 +11,14 @@
     "registerImmediately": "立即註冊"
   },
   "warnings": {
-    "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！",
+    "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！"
+  },
+  "validate": {
     "min_password": "密碼長度需超過4個字元",
     "max_password": "密碼長度不可超過16個字元",
     "field_should_fill": "欄位不可空白",
-    "c_password_not_match": "密碼與第一次輸入的不相符"
+    "c_password_not_match": "密碼與第一次輸入的不相符",
+    "email": "電子郵件格式不正確"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
