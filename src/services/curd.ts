@@ -16,13 +16,8 @@ export const createData = async (
 ): Promise<string> => {
   try {
     const docRef = doc(db, col, id)
-    const result = await setDoc(docRef, data, {merge: true})
-    // const docRef = await setDoc(collection(db, col), {
-    //   data,
-    // })
-    console.log(result)
-    // const {id} = docRef
-    // console.info(`Document written with ID`, id)
+    await setDoc(docRef, data, {merge: true})
+    console.info(`Document written with ID`, id)
     return Promise.resolve(id)
   } catch (error: any) {
     return Promise.reject(error)
