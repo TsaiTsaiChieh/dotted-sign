@@ -3,47 +3,34 @@ import {useState} from 'react'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {useForm} from 'react-hook-form'
 import {useTranslation} from 'react-i18next'
-import * as yup from 'yup'
 
 import Button from '../../components/Button'
 import FormError from '../../components/FormError'
+import {registerSchema} from '../../schemas/auth'
 import {createData} from '../../services/curd'
 import {nativeRegister} from '../../services/user'
 import {useAppDispatch} from '../../store/hook'
 import {setIsAuth, setUserData} from '../../store/reducers/authSlice'
+import {setRegisterVisible} from '../../store/reducers/uiSlice'
 import {RegisterFormWrap, RegisterForm} from '../../styled/Auth'
 
 const RegisterForms = () => {
   const {t} = useTranslation()
   const dispatch = useAppDispatch()
   const [error, setError] = useState<string>('')
-  const schema = yup.object().shape({
-    email: yup
-      .string()
-      .required(t('validate.field_should_fill')!)
-      .email(t('validate.email')!),
-    password: yup
-      .string()
-      .required(t('validate.field_should_fill')!)
-      .min(6, t('validate.min_password')!)
-      .max(16, t('validate.max_password')!),
-    cPassword: yup
-      .string()
-      .required(t('validate.field_should_fill')!)
-      .oneOf([yup.ref('password'), null], t('validate.c_password_not_match')!),
-  })
   const {
     register,
     handleSubmit,
     formState: {errors},
     reset,
-  } = useForm<RegisterForm>({resolver: yupResolver(schema)})
+  } = useForm<RegisterForm>({resolver: yupResolver(registerSchema)})
   const onSubmit = async (data: RegisterForm) => {
     try {
       const user = await nativeRegister(data)
       await createData('users', user.email, user)
       dispatch(setIsAuth(true))
       dispatch(setUserData(user))
+      dispatch(setRegisterVisible(false))
     } catch (error: any) {
       setError(t(`errors.${error}`)!)
     }
