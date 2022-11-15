@@ -3,6 +3,7 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
+  signInWithEmailAndPassword,
 } from 'firebase/auth'
 
 import {auth} from '../firebase'
@@ -34,7 +35,24 @@ export const nativeRegister = async (
     return Promise.reject(errorHandle(error))
   }
 }
-
+export const nativeLogin = async (data: LoginForm): Promise<UserDataType> => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      data.email,
+      data.password,
+    )
+    const {user} = userCredential
+    return Promise.resolve({
+      uid: user.uid,
+      email: user.email!,
+      photo: null,
+      name: null,
+    })
+  } catch (error) {
+    return Promise.reject(errorHandle(error))
+  }
+}
 export const googleLogin = async (): Promise<RegisterResType> => {
   const provider = new GoogleAuthProvider()
   const auth = getAuth()
