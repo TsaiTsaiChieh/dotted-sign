@@ -1,4 +1,2 @@
-type RegisterResType = {
-  uid: string
-  email: string
-}
+type RegisterResType = UserDataType
+type ThirdPartyLoginResType = UserDataType
