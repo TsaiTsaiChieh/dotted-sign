@@ -5,6 +5,7 @@ const initialState: uiState = {
   modals: {
     shouldAuthVisible: false,
     registerVisible: false,
+    loginVisible: true,
   },
 }
 
@@ -18,8 +19,12 @@ export const uiSlice = createSlice({
     setRegisterVisible: (state, {payload}: PayloadAction<boolean>) => {
       state.modals.registerVisible = payload
     },
+    setLoginVisible: (state, {payload}: PayloadAction<boolean>) => {
+      state.modals.loginVisible = payload
+    },
   },
 })
 
-export const {setShouldAuthVisible, setRegisterVisible} = uiSlice.actions
+export const {setShouldAuthVisible, setRegisterVisible, setLoginVisible} =
+  uiSlice.actions
 export default uiSlice.reducer
