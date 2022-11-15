@@ -1,14 +1,16 @@
 {
   "titles": {
     "home": "記錄你的點點滴滴",
-    "register": "申請家園許可證"
+    "register": "申請家園許可證",
+    "login": "家園許可證"
   },
   "buttons": {
-    "login": "登入/註冊",
+    "login_or_register": "登入/註冊",
     "enter": "點我進入",
     "history": "歷史紀錄",
     "register": "點我註冊",
-    "registerImmediately": "立即註冊"
+    "registerImmediately": "立即註冊",
+    "login": "登入"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
@@ -27,6 +29,8 @@
   },
   "errors": {
     "auth/email-already-in-use": "電子郵件已被註冊使用",
+    "auth/user-not-found": "此帳號不存在，需要註冊",
+    "auth/wrong-password": "密碼錯誤",
     "unknown": "未知的錯誤"
   }
 }
