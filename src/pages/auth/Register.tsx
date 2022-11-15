@@ -6,7 +6,6 @@ import {setRegisterVisible} from '../../store/reducers/uiSlice'
 import {
   FatBee,
   FBIcon,
-  GoogleIcon,
   RegisterTitle,
   RegisterTitleWrap,
   ThirdPartyWrap,
@@ -14,6 +13,7 @@ import {
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
+import GoogleLogin from './GoogleLogin'
 import RegisterForms from './RegisterForms'
 
 const Register = () => {
@@ -35,7 +35,7 @@ const Register = () => {
         </RegisterTitleWrap>
         <RegisterForms />
         <ThirdPartyWrap>
-          <GoogleIcon />
+          <GoogleLogin />
           <FBIcon />
         </ThirdPartyWrap>
         <FatBee />
