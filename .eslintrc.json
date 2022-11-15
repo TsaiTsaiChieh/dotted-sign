@@ -121,6 +121,7 @@
         }
       }
     ],
+    "@typescript-eslint/no-explicit-any": "off",
     "camelcase": [
       "error",
       {
