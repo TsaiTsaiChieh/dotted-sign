@@ -1,13 +1,16 @@
 import ShouldAuth from './components/modals/ShouldAuth'
 import Auth from './pages/auth/Auth'
-import Home from './pages/home/Home'
+import View from './routes'
+import {useAppSelector} from './store/hook'
 
 const App = () => {
+  const {isAuth} = useAppSelector((state) => state.auth)
+
   return (
     <>
-      <Home />
       <ShouldAuth />
-      <Auth />
+      {isAuth ? null : <Auth />}
+      <View />
     </>
   )
 }
