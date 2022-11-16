@@ -29,10 +29,10 @@ const LoginForms = () => {
       const user = await nativeLogin(data)
       dispatch(login(user))
       dispatch(setLoginVisible(false))
+      reset()
     } catch (error) {
       setError(t(`errors.${error}`)!)
     }
-    reset()
   }
   const clearError = () => {
     setError('')

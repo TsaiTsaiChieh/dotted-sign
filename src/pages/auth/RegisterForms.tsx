@@ -31,10 +31,10 @@ const RegisterForms = () => {
       await createData('users', user.email, user)
       dispatch(login(user))
       dispatch(setRegisterVisible(false))
+      reset()
     } catch (error: any) {
       setError(t(`errors.${error}`)!)
     }
-    reset()
   }
   const clearError = () => {
     setError('')
