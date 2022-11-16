@@ -5,7 +5,7 @@ const initialState: uiState = {
   modals: {
     shouldAuthVisible: false,
     registerVisible: false,
-    loginVisible: true,
+    loginVisible: false,
   },
 }
 
