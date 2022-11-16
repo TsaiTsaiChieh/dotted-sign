@@ -11,7 +11,7 @@ import {createData} from '../../services/curd'
 import {nativeRegister} from '../../services/user'
 import {useAppDispatch} from '../../store/hook'
 import {login} from '../../store/reducers/authSlice'
-import {setRegisterVisible} from '../../store/reducers/uiSlice'
+import {setLoading, setRegisterVisible} from '../../store/reducers/uiSlice'
 import {RegisterFormWrap, RegisterForm} from '../../styled/Auth'
 
 const RegisterForms = () => {
@@ -26,6 +26,7 @@ const RegisterForms = () => {
     clearErrors,
   } = useForm<RegisterForm>({resolver: yupResolver(registerSchema)})
   const onSubmit = async (data: RegisterForm) => {
+    dispatch(setLoading(true))
     try {
       const user = await nativeRegister(data)
       await createData('users', user.email, user)
@@ -35,6 +36,7 @@ const RegisterForms = () => {
     } catch (error: any) {
       setError(t(`errors.${error}`)!)
     }
+    dispatch(setLoading(false))
   }
   const clearError = () => {
     setError('')

@@ -10,7 +10,7 @@ import {loginSchema} from '../../schemas/auth'
 import {nativeLogin} from '../../services/user'
 import {useAppDispatch} from '../../store/hook/index'
 import {login} from '../../store/reducers/authSlice'
-import {setLoginVisible} from '../../store/reducers/uiSlice'
+import {setLoading, setLoginVisible} from '../../store/reducers/uiSlice'
 import {LoginForm, LoginFormWrap} from '../../styled/Auth'
 
 const LoginForms = () => {
@@ -25,6 +25,7 @@ const LoginForms = () => {
     clearErrors,
   } = useForm<LoginForm>({resolver: yupResolver(loginSchema)})
   const onSubmit = async (data: LoginForm) => {
+    dispatch(setLoading(true))
     try {
       const user = await nativeLogin(data)
       dispatch(login(user))
@@ -33,6 +34,8 @@ const LoginForms = () => {
     } catch (error) {
       setError(t(`errors.${error}`)!)
     }
+
+    dispatch(setLoading(false))
   }
   const clearError = () => {
     setError('')
