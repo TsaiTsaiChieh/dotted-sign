@@ -39,3 +39,40 @@ export const ErrorMsg = styled.span`
   font-weight: bold;
   color: ${Color.red[50]};
 `
+export const LoadingWrap = styled.div<{visible: boolean}>`
+  display: ${(props) => (props.visible ? 'block' : 'none')};
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background: ${Color.primary['50-a50']};
+  z-index: 1000;
+`
+export const HexLoading = styled.img`
+  content: url("/images/hex-loading.svg");
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  animation: spin 5000ms linear infinite;
+`
+export const BeeWrap = styled.div`
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`
+export const BeeLoading = styled.img`
+  content: url("/images/bee-loading.svg");
+  width: 100%;
+  height: 136px;
+`
+export const TextLoading = styled.span`
+  color: ${Color.black[50]};
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+`
