@@ -1,3 +1,4 @@
+import Loading from './components/Loading'
 import ShouldAuth from './components/modals/ShouldAuth'
 import Auth from './pages/auth/Auth'
 import View from './routes'
@@ -8,6 +9,7 @@ const App = () => {
 
   return (
     <>
+      <Loading />
       <ShouldAuth />
       {isAuth ? null : <Auth />}
       <View />
