@@ -9,7 +9,7 @@ import FormError from '../../components/FormError'
 import {loginSchema} from '../../schemas/auth'
 import {nativeLogin} from '../../services/user'
 import {useAppDispatch} from '../../store/hook/index'
-import {setIsAuth, setUserData} from '../../store/reducers/authSlice'
+import {login} from '../../store/reducers/authSlice'
 import {setLoginVisible} from '../../store/reducers/uiSlice'
 import {LoginForm, LoginFormWrap} from '../../styled/Auth'
 
@@ -26,8 +26,7 @@ const LoginForms = () => {
   const onSubmit = async (data: LoginForm) => {
     try {
       const user = await nativeLogin(data)
-      dispatch(setIsAuth(true))
-      dispatch(setUserData(user))
+      dispatch(login(user))
       dispatch(setLoginVisible(false))
     } catch (error) {
       setError(t(`errors.${error}`)!)
