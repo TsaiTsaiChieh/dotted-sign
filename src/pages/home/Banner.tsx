@@ -1,7 +1,9 @@
 import {useTranslation} from 'react-i18next'
+import {useNavigate} from 'react-router-dom'
 
 import Button from '../../components/Button'
-import {useAppDispatch} from '../../store/hook'
+import {Navigation} from '../../routes/Navigation'
+import {useAppDispatch, useAppSelector} from '../../store/hook'
 import {setShouldAuthVisible} from '../../store/reducers/uiSlice'
 import {
   BannerWrap,
@@ -17,8 +19,12 @@ import {
 const Banner = () => {
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
+  const {isAuth} = useAppSelector((state) => state.auth)
+  const navigate = useNavigate()
   const handleEnter = () => {
-    dispatch(setShouldAuthVisible(true))
+    isAuth ?
+      navigate(Navigation[0].path) :
+      dispatch(setShouldAuthVisible(true))
   }
 
   return (
