@@ -4,7 +4,7 @@ import {Color} from '../constants/Variables'
 
 export const AuthContainer = styled.div<{visible: boolean}>`
   width: 588px;
-  height: 734px;
+  height: 770px;
   margin: auto;
   display: ${(props) => (props.visible ? 'flex' : 'none')};
   flex-direction: column;
