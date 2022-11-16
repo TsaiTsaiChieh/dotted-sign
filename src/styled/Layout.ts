@@ -34,6 +34,7 @@ export const Logo = styled.img`
   width: 220px;
   height: 43px;
   content: url("/images/logo.svg");
+  cursor: pointer;
 `
 export const Photo = styled.div<{path?: string}>`
   width: 70px;

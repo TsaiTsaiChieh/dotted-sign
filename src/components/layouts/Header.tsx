@@ -1,4 +1,5 @@
 import {useTranslation} from 'react-i18next'
+import {useNavigate} from 'react-router-dom'
 
 import {useAppDispatch, useAppSelector} from '../../store/hook'
 import {logout} from '../../store/reducers/authSlice'
@@ -10,16 +11,20 @@ const Header = () => {
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
   const {isAuth, userData} = useAppSelector((state) => state.auth)
+  const navigate = useNavigate()
   const openLoginModal = () => {
     dispatch(setLoginVisible(true))
   }
   const handleLogout = () => {
     dispatch(logout())
   }
+  const goHome = () => {
+    navigate('/')
+  }
   return (
     <Navbar>
       <div className='flex container'>
-        <Logo />
+        <Logo onClick={goHome} />
         <div className='flex btns'>
           {isAuth ? (
             <Photo
