@@ -9,16 +9,18 @@ export const MainContainer = styled.div`
   align-items: center;
 `
 export const Bee = styled.img`
-  width: 50%;
+  width: 40%;
   height: 327px;
   content: url("/images/bee-normal.svg");
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 `
 export const InteractWrap = styled.div`
-  width: 50%;
+  width: 60%;
   display: flex;
-  justify-content: center;
+  margin-top: 70px;
+  justify-content: flex-start;
+  gap: 50px;
 `
 export const InteractCard = styled.div`
   position: relative;
@@ -32,6 +34,7 @@ export const InteractCard = styled.div`
   border-radius: 6px;
   background: ${Color.white[50]};
   box-shadow: 0px 4px 5px 4px ${Color.black['100-p25']};
+  margin-top: 20px;
 `
 export const TitleWrap = styled.div`
   display: flex;
@@ -46,4 +49,28 @@ export const Title = styled.h1`
 export const SubTitle = styled.h2`
   font-weight: bold;
   font-size: 16px;
+`
+export const StepWrap = styled.div`
+  display: flex;
+  position: relative;
+`
+export const StepNameWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  gap: 218px;
+  margin-top: 155px;
+  left: 0;
+  right: 0;
+`
+export const StepName = styled.span`
+  font-weight: bold;
+  font-size: 24px;
+`
+export const Progress = styled.img<{id: string}>`
+  width: 215px;
+  height: 100%;
+  content: ${(props) => `url(/images/step${props.id}.svg)`};
 `
