@@ -1,15 +1,15 @@
-import {HomeContainer} from '../../styled/Home'
-import Background from './Background'
+import Background from '../../components/layouts/Background'
+import Header from '../../components/layouts/Header'
+import {Container} from '../../styled/Layout'
 import Banner from './Banner'
-import Header from './Header'
 
 const Home = () => {
   return (
-    <HomeContainer>
+    <Container>
       <Header />
       <Banner />
       <Background />
-    </HomeContainer>
+    </Container>
   )
 }
 
