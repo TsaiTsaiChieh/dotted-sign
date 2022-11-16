@@ -12,7 +12,7 @@ const Main = ({childElement}: Props) => {
     <Container>
       <Header />
       {childElement}
-      <Background />
+      <Background loose={true} />
     </Container>
   )
 }
