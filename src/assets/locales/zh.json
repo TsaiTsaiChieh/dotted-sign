@@ -2,7 +2,9 @@
   "titles": {
     "home": "記錄你的點點滴滴",
     "register": "申請家園許可證",
-    "login": "家園許可證"
+    "login": "家園許可證",
+    "upload_file": "上傳簽署檔案",
+    "start_to_record": "開始記錄關於你的點點滴滴"
   },
   "buttons": {
     "login_or_register": "登入/註冊",
@@ -10,12 +12,18 @@
     "history": "歷史紀錄",
     "register": "點我註冊",
     "registerImmediately": "立即註冊",
-    "login": "登入"
+    "login": "登入",
+    "logout": "登出",
+    "upload_file": "開始上傳"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
     "password": "請輸入密碼",
     "c_password": "請再輸入一次密碼"
+  },
+  "hints": {
+    "already_login": "已有帳號？<1>登入</1>",
+    "should_register": "沒有帳號？<1>註冊</1>"
   },
   "warnings": {
     "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！"
