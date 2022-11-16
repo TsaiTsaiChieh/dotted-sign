@@ -4,6 +4,7 @@ interface uiState {
     registerVisible: boolean
     loginVisible: boolean
   }
+  loadingVisible: boolean
 }
 interface authState {
   isAuth: boolean
