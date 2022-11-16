@@ -10,18 +10,19 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setIsAuth: (state, {payload}: PayloadAction<boolean>) => {
-      state.isAuth = payload
+    login: (state, {payload}: PayloadAction<UserDataType>) => {
+      state.isAuth = true
+      state.userData = payload
     },
     setNativeRegisterIsPass: (state, {payload}: PayloadAction<boolean>) => {
       state.nativeRegisterIsPass = payload
     },
-    setUserData: (state, {payload}: PayloadAction<UserDataType>) => {
-      state.userData = payload
+    logout: (state) => {
+      state.isAuth = false
+      state.userData = undefined
     },
   },
 })
 
-export const {setIsAuth, setNativeRegisterIsPass, setUserData} =
-  authSlice.actions
+export const {login, setNativeRegisterIsPass, logout} = authSlice.actions
 export default authSlice.reducer
