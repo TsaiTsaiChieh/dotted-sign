@@ -23,6 +23,7 @@ const RegisterForms = () => {
     handleSubmit,
     formState: {errors},
     reset,
+    clearErrors,
   } = useForm<RegisterForm>({resolver: yupResolver(registerSchema)})
   const onSubmit = async (data: RegisterForm) => {
     try {
@@ -35,11 +36,14 @@ const RegisterForms = () => {
     }
     reset()
   }
-
+  const clearError = () => {
+    setError('')
+    clearErrors()
+  }
   return (
     <RegisterFormWrap
       onSubmit={handleSubmit(onSubmit)}
-      onClick={() => setError('')}
+      onClick={clearError}
     >
       <RegisterForm
         placeholder={t('placeholders.email')!}
@@ -52,6 +56,7 @@ const RegisterForms = () => {
       <RegisterForm
         placeholder={t('placeholders.password')!}
         {...register('password')}
+        type='password'
       />
       <FormError
         msg={errors.password?.message as string}
@@ -60,6 +65,7 @@ const RegisterForms = () => {
       <RegisterForm
         placeholder={t('placeholders.c_password')!}
         {...register('cPassword')}
+        type='password'
       />
       <FormError
         msg={errors.cPassword?.message as string}

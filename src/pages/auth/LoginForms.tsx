@@ -22,6 +22,7 @@ const LoginForms = () => {
     handleSubmit,
     formState: {errors},
     reset,
+    clearErrors,
   } = useForm<LoginForm>({resolver: yupResolver(loginSchema)})
   const onSubmit = async (data: LoginForm) => {
     try {
@@ -33,11 +34,15 @@ const LoginForms = () => {
     }
     reset()
   }
+  const clearError = () => {
+    setError('')
+    clearErrors()
+  }
 
   return (
     <LoginFormWrap
       onSubmit={handleSubmit(onSubmit)}
-      onClick={() => setError('')}
+      onClick={clearError}
     >
       <LoginForm
         placeholder={t('placeholders.email')!}
