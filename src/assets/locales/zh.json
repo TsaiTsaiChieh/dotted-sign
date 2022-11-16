@@ -4,7 +4,8 @@
     "register": "申請家園許可證",
     "login": "家園許可證",
     "upload_file": "上傳簽署檔案",
-    "start_to_record": "開始記錄關於你的點點滴滴"
+    "start_to_record": "開始記錄關於你的點點滴滴",
+    "loading": "載入中"
   },
   "buttons": {
     "login_or_register": "登入/註冊",
@@ -35,6 +36,7 @@
     "c_password_not_match": "密碼與第一次輸入的不相符",
     "email": "電子郵件格式不正確"
   },
+  "steps": ["上傳簽署檔案", "進行簽署", "簽署完成"],
   "errors": {
     "auth/email-already-in-use": "電子郵件已被註冊使用",
     "auth/user-not-found": "此帳號不存在，需要註冊",
