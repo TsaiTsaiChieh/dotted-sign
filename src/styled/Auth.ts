@@ -5,7 +5,7 @@ import {AuthContainer} from './Modal'
 
 export const RegisterContainer = styled(AuthContainer)`
   width: 420px;
-  height: 484px;
+  height: 520px;
   padding: 40px 84px 210px;
   overflow: hidden;
 `
@@ -22,10 +22,10 @@ export const RegisterFormWrap = styled.form`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 30px 0 24px;
+  margin-top: 30px;
   position: relative;
   button {
-    margin-top: 12px;
+    margin-top: 10px;
   }
 `
 export const RegisterForm = styled.input`
@@ -46,6 +46,20 @@ export const FatBee = styled.img`
   width: 100%;
   bottom: -10px;
 `
+export const ChangeModal = styled.span`
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 25px;
+  span {
+    cursor: pointer;
+    font-weight: normal;
+    color: ${Color.primary[50]};
+    text-decoration: underline;
+    &.blue {
+      color: ${Color.blue[50]};
+    }
+  }
+`
 export const ThirdPartyWrap = styled.div`
   display: flex;
   gap: 48px;
@@ -60,7 +74,7 @@ export const FBIcon = styled.img`
 `
 export const LoginContainer = styled(RegisterContainer)`
   width: 380px;
-  height: 492px;
+  height: 528px;
   padding: 32px 104px 210px;
 `
 export const LoginTitleWrap = styled(RegisterTitleWrap)`
