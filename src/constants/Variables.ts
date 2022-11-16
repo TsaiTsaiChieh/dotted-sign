@@ -3,6 +3,7 @@ export const Color = {
     '50': '#FAC200',
     '100': '#FFE100',
     '150': '#FFFCDB',
+    '50-a50': 'rgba(250, 194, 0, 0.5)',
   },
   secondary: {
     '50': '#964900',
