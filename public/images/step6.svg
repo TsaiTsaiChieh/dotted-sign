@@ -1,0 +1,78 @@
+/* Frame */
+
+position: relative;
+width: 221px;
+height: 838px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 44.34%;
+right: 43.89%;
+top: 0.12%;
+bottom: 50.12%;
+
+background: #FAC200;
+border: 1px solid #FAC200;
+
+
+/* Vector */
+
+position: absolute;
+left: 44.34%;
+right: 43.89%;
+top: 80.31%;
+bottom: 0.36%;
+
+background: #FAC200;
+border: 5px solid #FAC200;
+
+
+/* Vector */
+
+position: absolute;
+left: 44.34%;
+right: 43.89%;
+top: 45.58%;
+bottom: 19.69%;
+
+background: #FAC200;
+border: 5px solid #FAC200;
+
+
+/* Vector */
+
+position: absolute;
+left: 1.36%;
+right: 1.36%;
+top: 9.24%;
+bottom: 68.54%;
+
+background: #FAC200;
+border: 5px solid #FAC200;
+
+
+/* Vector */
+
+position: absolute;
+left: 1.36%;
+right: 1.36%;
+top: 38.71%;
+bottom: 39.07%;
+
+background: #FAC200;
+border: 5px solid #FAC200;
+
+
+/* Vector */
+
+position: absolute;
+left: 1.36%;
+right: 1.36%;
+top: 68.19%;
+bottom: 9.59%;
+
+background: #FAC200;
+border: 5px solid #FAC200;
