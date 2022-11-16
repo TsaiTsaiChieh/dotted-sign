@@ -41,6 +41,15 @@ export const Logo = styled.img`
   height: 43px;
   content: url("/images/logo.svg");
 `
+export const Photo = styled.div<{path?: string}>`
+  width: 70px;
+  height: 70px;
+  background: ${(props) =>
+    props.path ? `url(${props.path})` : 'url("/images/photo.svg")'};
+  background-size: cover;
+  -webkit-mask: url("/images/photo.svg") no-repeat center center;
+  mask: url("/images/photo.svg") no-repeat center center;
+`
 // Banner
 export const BannerWrap = styled.div`
   width: 100%;
