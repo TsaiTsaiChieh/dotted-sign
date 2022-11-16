@@ -1,8 +1,10 @@
-
-import {useTranslation} from 'react-i18next'
+import {Trans, useTranslation} from 'react-i18next'
 
 import {useAppDispatch, useAppSelector} from '../../store/hook'
-import {setRegisterVisible} from '../../store/reducers/uiSlice'
+import {
+  setLoginVisible,
+  setRegisterVisible,
+} from '../../store/reducers/uiSlice'
 import {
   FatBee,
   FBIcon,
@@ -10,6 +12,7 @@ import {
   RegisterTitleWrap,
   ThirdPartyWrap,
   RegisterContainer,
+  ChangeModal,
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
@@ -24,6 +27,10 @@ const Register = () => {
   const close = () => {
     dispatch(setRegisterVisible(false))
   }
+  const openLogin = () => {
+    dispatch(setRegisterVisible(false))
+    dispatch(setLoginVisible(true))
+  }
 
   return (
     <>
@@ -34,6 +41,12 @@ const Register = () => {
           <RegisterTitle>{t('titles.register')}</RegisterTitle>
         </RegisterTitleWrap>
         <RegisterForms />
+        <ChangeModal>
+          <Trans
+            i18nKey='hints.already_login'
+            components={{1: <span onClick={openLogin} />}}
+          />
+        </ChangeModal>
         <ThirdPartyWrap>
           <GoogleLogin />
           <FBIcon />

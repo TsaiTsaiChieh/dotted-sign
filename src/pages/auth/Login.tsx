@@ -1,7 +1,10 @@
-import {useTranslation} from 'react-i18next'
+import {Trans, useTranslation} from 'react-i18next'
 
 import {useAppSelector, useAppDispatch} from '../../store/hook'
-import {setLoginVisible} from '../../store/reducers/uiSlice'
+import {
+  setLoginVisible,
+  setRegisterVisible,
+} from '../../store/reducers/uiSlice'
 import {
   LoginContainer,
   FatBee,
@@ -9,6 +12,7 @@ import {
   LoginTitle,
   LoginTitleWrap,
   ThirdPartyWrap,
+  ChangeModal,
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
@@ -23,6 +27,10 @@ const Login = () => {
   const close = () => {
     dispatch(setLoginVisible(false))
   }
+  const openRegister = () => {
+    dispatch(setLoginVisible(false))
+    dispatch(setRegisterVisible(true))
+  }
 
   return (
     <>
@@ -33,6 +41,12 @@ const Login = () => {
           <LoginTitle>{t('titles.login')}</LoginTitle>
         </LoginTitleWrap>
         <LoginForms />
+        <ChangeModal>
+          <Trans
+            i18nKey='hints.should_register'
+            components={{1: <span className='blue' onClick={openRegister} />}}
+          />
+        </ChangeModal>
         <ThirdPartyWrap>
           <GoogleLogin />
           <FBIcon />
