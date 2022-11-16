@@ -4,3 +4,10 @@ type UserDataType = {
   email: string
   photo: string | null
 }
+
+type NavigationType = {
+  id: string
+  name: string
+  path: string
+  childElement: React.ReactNode
+}
