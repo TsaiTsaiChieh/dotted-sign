@@ -23,8 +23,8 @@ const LoginForms = () => {
     formState: {errors},
     reset,
     clearErrors,
-  } = useForm<LoginForm>({resolver: yupResolver(loginSchema)})
-  const onSubmit = async (data: LoginForm) => {
+  } = useForm<LoginFormType>({resolver: yupResolver(loginSchema)})
+  const onSubmit = async (data: LoginFormType) => {
     dispatch(setLoading(true))
     try {
       const user = await nativeLogin(data)

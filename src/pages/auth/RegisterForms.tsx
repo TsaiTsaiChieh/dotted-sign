@@ -24,8 +24,8 @@ const RegisterForms = () => {
     formState: {errors},
     reset,
     clearErrors,
-  } = useForm<RegisterForm>({resolver: yupResolver(registerSchema)})
-  const onSubmit = async (data: RegisterForm) => {
+  } = useForm<RegisterFormType>({resolver: yupResolver(registerSchema)})
+  const onSubmit = async (data: RegisterFormType) => {
     dispatch(setLoading(true))
     try {
       const user = await nativeRegister(data)

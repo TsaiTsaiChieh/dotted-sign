@@ -16,7 +16,7 @@ const errorHandle = (error: any) => {
 }
 
 export const nativeRegister = async (
-  data: RegisterForm,
+  data: RegisterFormType,
 ): Promise<RegisterResType> => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
@@ -35,7 +35,9 @@ export const nativeRegister = async (
     return Promise.reject(errorHandle(error))
   }
 }
-export const nativeLogin = async (data: LoginForm): Promise<UserDataType> => {
+export const nativeLogin = async (
+  data: LoginFormType,
+): Promise<UserDataType> => {
   try {
     const userCredential = await signInWithEmailAndPassword(
       auth,
