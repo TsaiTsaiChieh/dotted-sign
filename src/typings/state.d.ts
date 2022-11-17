@@ -11,3 +11,6 @@ interface authState {
   nativeRegisterIsPass: boolean
   userData?: UserDataType
 }
+interface persistState {
+  docBase64?: string
+}
