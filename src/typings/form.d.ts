@@ -1,6 +1,9 @@
-type RegisterForm = {
+type RegisterFormType = {
   email: string
   password: string
   cPassword: string
 }
-type LoginForm = Omit<RegisterForm, 'cPassword'>
+type LoginFormType = Omit<RegisterForm, 'cPassword'>
+type UploadDocFormType = {
+  file: File
+}
