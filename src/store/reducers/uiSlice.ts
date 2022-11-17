@@ -8,6 +8,7 @@ const initialState: uiState = {
     loginVisible: false,
   },
   loadingVisible: false,
+  stepId: '1',
 }
 
 export const uiSlice = createSlice({
@@ -26,6 +27,9 @@ export const uiSlice = createSlice({
     setLoading: (state, {payload}: PayloadAction<boolean>) => {
       state.loadingVisible = payload
     },
+    setStepId: (state, {payload}: PayloadAction<string>) => {
+      state.stepId = payload
+    },
   },
 })
 
@@ -34,5 +38,6 @@ export const {
   setRegisterVisible,
   setLoginVisible,
   setLoading,
+  setStepId,
 } = uiSlice.actions
 export default uiSlice.reducer

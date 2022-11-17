@@ -5,6 +5,7 @@ interface uiState {
     loginVisible: boolean
   }
   loadingVisible: boolean
+  stepId: string
 }
 interface authState {
   isAuth: boolean
