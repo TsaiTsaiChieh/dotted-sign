@@ -74,3 +74,22 @@ export const Progress = styled.img<{id: string}>`
   height: 100%;
   content: ${(props) => `url(/images/step${props.id}.svg)`};
 `
+export const PrevNextWrap = styled.div`
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+`
+export const PrevIcon = styled.img`
+  content: url("/images/prev.svg");
+  cursor: pointer;
+  &:hover {
+    content: url("/images/prev-hover.svg");
+  }
+`
+export const NextIcon = styled.img`
+  content: url("/images/next.svg");
+  cursor: pointer;
+  &:hover {
+    content: url("/images/next-hover.svg");
+  }
+`
