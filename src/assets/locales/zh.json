@@ -5,7 +5,9 @@
     "login": "家園許可證",
     "upload_file": "上傳簽署檔案",
     "start_to_record": "開始記錄關於你的點點滴滴",
-    "loading": "載入中"
+    "loading": "載入中",
+    "upload_sign": "建立簽名檔",
+    "start_to_sign": "簽名可直接用在簽署文件"
   },
   "buttons": {
     "login_or_register": "登入/註冊",
@@ -24,7 +26,8 @@
   },
   "hints": {
     "already_login": "已有帳號？<1>登入</1>",
-    "should_register": "沒有帳號？<1>註冊</1>"
+    "should_register": "沒有帳號？<1>註冊</1>",
+    "upload_success": "上傳成功"
   },
   "warnings": {
     "should_auth": "您未得到進入家園的許可證<br/>請先去找點點<1>‘’註冊‘’</1>進入喔！"
@@ -34,7 +37,10 @@
     "max_password": "密碼長度不可超過16個字元",
     "field_should_fill": "欄位不可空白",
     "c_password_not_match": "密碼與第一次輸入的不相符",
-    "email": "電子郵件格式不正確"
+    "email": "電子郵件格式不正確",
+    "file_required": "需要提供圖檔或PDF檔案，10MB以內",
+    "file_too_large": "檔案過大，限制10MB以內",
+    "file_format": "錯誤格式，需為jpg, png圖檔或PDF檔案"
   },
   "steps": ["上傳簽署檔案", "進行簽署", "簽署完成"],
   "errors": {
