@@ -5,5 +5,5 @@ type RegisterFormType = {
 }
 type LoginFormType = Omit<RegisterForm, 'cPassword'>
 type UploadDocFormType = {
-  file: File
+  file: File[]
 }
