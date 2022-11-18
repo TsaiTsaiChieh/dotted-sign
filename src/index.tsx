@@ -1,6 +1,6 @@
 import './styles/App.scss'
 import './i18n'
-
+import 'react-pdf/dist/esm/Page/TextLayer.css'
 import React from 'react'
 
 import ReactDOM from 'react-dom/client'
