@@ -10,8 +10,11 @@ export const persistSlice = createSlice({
     setFile: (state, {payload}: PayloadAction<string | undefined>) => {
       state.docBase64 = payload
     },
+    setSign: (state, {payload}: PayloadAction<string | undefined>) => {
+      state.signBase64 = payload
+    },
   },
 })
 
-export const {setFile} = persistSlice.actions
+export const {setFile, setSign} = persistSlice.actions
 export default persistSlice.reducer

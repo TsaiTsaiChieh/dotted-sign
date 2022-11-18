@@ -14,4 +14,5 @@ interface authState {
 }
 interface persistState {
   docBase64?: string
+  signBase64?: string
 }
