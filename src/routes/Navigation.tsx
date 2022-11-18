@@ -1,4 +1,5 @@
 import Doc from '../pages/main/doc/Doc'
+import Download from '../pages/main/download/Download'
 import Sign from '../pages/main/sign/Sign'
 
 export const Navigation: NavigationType[] = [
@@ -13,5 +14,11 @@ export const Navigation: NavigationType[] = [
     name: '進行簽署',
     path: '/upload_sign',
     childElement: <Sign />,
+  },
+  {
+    id: '3',
+    name: '完成簽署',
+    path: '/download',
+    childElement: <Download />,
   },
 ]
