@@ -5,15 +5,22 @@ import {useTranslation} from 'react-i18next'
 import SignatureCanvas from 'react-signature-canvas'
 
 import Button from '../../../components/Button'
+import FormError from '../../../components/FormError'
+import {useAppDispatch, useAppSelector} from '../../../store/hook'
+import {setSign} from '../../../store/reducers/persistSlice'
 import {
   ClearBtnWrap,
   ClearIcon,
   SignatureWrap,
   ThicknessInput,
 } from '../../../styled/Sign'
+import Success from './Success'
 
 const Canvas = () => {
+  const dispatch = useAppDispatch()
+  const {signBase64} = useAppSelector((state) => state.persist)
   const ref = useRef<null | SignatureCanvas>(null)
+  const [error, setError] = useState<string>('')
   const {t} = useTranslation()
   const [thickness, setThickness] = useState(5)
   const [color, setColor] = useState('#21194D')
@@ -30,7 +37,16 @@ const Canvas = () => {
   const clearAll = () => {
     ref.current?.clear()
   }
-  return (
+  const uploadSign = () => {
+    // base64 result
+    const result = ref.current?.toDataURL()
+    if (ref.current?.isEmpty()) setError(t('warnings.should_sign')!)
+    else {
+      setError('')
+      dispatch(setSign(result))
+    }
+  }
+  return signBase64 ? <Success /> : (
     <SignatureWrap>
       <SignatureCanvas
         ref={ref}
@@ -50,7 +66,8 @@ const Canvas = () => {
         <ClearIcon />
         <span>{t('buttons.clear_all')}</span>
       </ClearBtnWrap>
-      <Button content={t('buttons.upload_sign')} />
+      <Button content={t('buttons.upload_sign')} onClick={uploadSign} />
+      <FormError msg={error} visible={error !== ''} />
     </SignatureWrap>
   )
 }
