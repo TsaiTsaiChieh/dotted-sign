@@ -21,6 +21,7 @@
     "logout": "登出",
     "upload_file": "開始上傳",
     "clear_all": "清除全部",
+    "undo": "回上一步",
     "upload_sign": "上傳簽名檔"
   },
   "placeholders": {
