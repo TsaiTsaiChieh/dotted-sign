@@ -5,7 +5,7 @@ import {Navigation} from '../../../routes/Navigation'
 import {useAppDispatch} from '../../../store/hook'
 import {setFile} from '../../../store/reducers/persistSlice'
 import {setStepId} from '../../../store/reducers/uiSlice'
-import {HappyIcon, SuccessWrap} from '../../../styled/Docs'
+import {DocIcon, SuccessWrap} from '../../../styled/Docs'
 import PrevNextBtns from '../PrevNextBtns'
 
 const Success = () => {
@@ -21,7 +21,7 @@ const Success = () => {
   }
   return (
     <SuccessWrap>
-      <HappyIcon />
+      <DocIcon />
       <span>{t('hints.upload_success')}</span>
       <PrevNextBtns prevAction={prevAction} nextAction={nextAction} />
     </SuccessWrap>

@@ -42,6 +42,6 @@ export const SuccessWrap = styled.div`
     color: ${Color.primary[50]};
   }
 `
-export const HappyIcon = styled.img`
-  content: url("/images/good.svg");
+export const DocIcon = styled.img`
+  content: url("/images/doc.svg");
 `
