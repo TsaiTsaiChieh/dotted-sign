@@ -20,3 +20,6 @@ export const ClearBtnWrap = styled.div`
 export const ClearIcon = styled.img`
   content: url("/images/clear.svg");
 `
+export const HappyIcon = styled.img`
+  content: url("/images/good.svg");
+`
