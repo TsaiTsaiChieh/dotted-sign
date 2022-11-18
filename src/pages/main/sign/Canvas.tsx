@@ -9,10 +9,13 @@ import FormError from '../../../components/FormError'
 import {useAppDispatch, useAppSelector} from '../../../store/hook'
 import {setSign} from '../../../store/reducers/persistSlice'
 import {
-  ClearBtnWrap,
+  BtnWrapper,
   ClearIcon,
   SignatureWrap,
+  Thickness,
   ThicknessInput,
+  UIWrap,
+  UndoIcon,
 } from '../../../styled/Sign'
 import Success from './Success'
 
@@ -22,8 +25,8 @@ const Canvas = () => {
   const ref = useRef<null | SignatureCanvas>(null)
   const [error, setError] = useState<string>('')
   const {t} = useTranslation()
-  const [thickness, setThickness] = useState(5)
-  const [color, setColor] = useState('#21194D')
+  const [thickness, setThickness] = useState(2.5)
+  const [color, setColor] = useState('#1E194D')
   const pickerOnChange = (
     color: ColorResult,
     _: ChangeEvent<HTMLInputElement>,
@@ -32,7 +35,7 @@ const Canvas = () => {
   }
   const thicknessOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement
-    setThickness(parseInt(target.value))
+    setThickness(parseFloat(target.value))
   }
   const clearAll = () => {
     ref.current?.clear()
@@ -46,26 +49,46 @@ const Canvas = () => {
       dispatch(setSign(result))
     }
   }
-  return signBase64 ? <Success /> : (
+  const undo = () => {
+    const data = ref.current?.toData()
+    if (data) {
+      data.pop()
+      ref.current?.fromData(data)
+    }
+  }
+  return signBase64 ? (
+    <Success />
+  ) : (
     <SignatureWrap>
       <SignatureCanvas
         ref={ref}
         canvasProps={{width: 350, height: 200, className: 'signature'}}
-        dotSize={thickness}
+        minWidth={thickness / 5}
+        maxWidth={thickness}
         penColor={color}
       />
       <SliderPicker color={color} onChange={pickerOnChange} />
-      <ThicknessInput
-        min={1}
-        max={20}
-        value={thickness}
-        type='range'
-        onChange={thicknessOnChange}
-      />
-      <ClearBtnWrap onClick={clearAll}>
-        <ClearIcon />
-        <span>{t('buttons.clear_all')}</span>
-      </ClearBtnWrap>
+      <UIWrap>
+        <ThicknessInput
+          min={1}
+          step={0.5}
+          max={15}
+          value={thickness}
+          type='range'
+          onChange={thicknessOnChange}
+        />
+        <Thickness>{thickness}</Thickness>
+      </UIWrap>
+      <BtnWrapper>
+        <UIWrap onClick={undo}>
+          <UndoIcon />
+          <span>{t('buttons.undo')}</span>
+        </UIWrap>
+        <UIWrap onClick={clearAll}>
+          <ClearIcon />
+          <span>{t('buttons.clear_all')}</span>
+        </UIWrap>
+      </BtnWrapper>
       <Button content={t('buttons.upload_sign')} onClick={uploadSign} />
       <FormError msg={error} visible={error !== ''} />
     </SignatureWrap>
