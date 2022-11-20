@@ -9,7 +9,9 @@
     "upload_sign": "建立簽名檔",
     "start_to_sign": "簽名可直接用在簽署文件",
     "sign_it": "簽署文件",
-    "move_sign": "把你的專屬簽名置入文件內吧！"
+    "move_sign": "把你的專屬簽名置入文件內吧！",
+    "abandon": "您確定要離開此步驟嗎？",
+    "abandon_sub": "已經上傳的資料將會被清除"
   },
   "buttons": {
     "login_or_register": "登入/註冊",
@@ -22,7 +24,9 @@
     "upload_file": "開始上傳",
     "clear_all": "清除全部",
     "undo": "回上一步",
-    "upload_sign": "上傳簽名檔"
+    "upload_sign": "上傳簽名檔",
+    "think_again": "我再想想",
+    "abandon_yes": "確定離開"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
