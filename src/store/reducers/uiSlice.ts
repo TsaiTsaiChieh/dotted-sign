@@ -6,6 +6,7 @@ const initialState: uiState = {
     shouldAuthVisible: false,
     registerVisible: false,
     loginVisible: false,
+    abandonVisible: false,
   },
   loadingVisible: false,
   stepId: '1',
@@ -24,6 +25,9 @@ export const uiSlice = createSlice({
     setLoginVisible: (state, {payload}: PayloadAction<boolean>) => {
       state.modals.loginVisible = payload
     },
+    setAbandonVisible: (state, {payload}: PayloadAction<boolean>) => {
+      state.modals.abandonVisible = payload
+    },
     setLoading: (state, {payload}: PayloadAction<boolean>) => {
       state.loadingVisible = payload
     },
@@ -37,6 +41,7 @@ export const {
   setShouldAuthVisible,
   setRegisterVisible,
   setLoginVisible,
+  setAbandonVisible,
   setLoading,
   setStepId,
 } = uiSlice.actions

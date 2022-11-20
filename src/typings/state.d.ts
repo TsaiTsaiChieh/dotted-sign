@@ -3,6 +3,7 @@ interface uiState {
     shouldAuthVisible: boolean
     registerVisible: boolean
     loginVisible: boolean
+    abandonVisible: boolean
   }
   loadingVisible: boolean
   stepId: string
