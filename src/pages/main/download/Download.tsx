@@ -1,7 +1,7 @@
 import {useTranslation} from 'react-i18next'
 
 import {InteractCard, TitleWrap, Title, SubTitle} from '../../../styled/Main'
-import Preview1 from './Preview1'
+import Preview from './Preview'
 
 const Download = () => {
   const {t} = useTranslation()
@@ -11,7 +11,7 @@ const Download = () => {
         <Title>{t('titles.sign_it')}</Title>
         <SubTitle>{t('titles.move_sign')}</SubTitle>
       </TitleWrap>
-      <Preview1 />
+      <Preview />
     </InteractCard>
   )
 }
