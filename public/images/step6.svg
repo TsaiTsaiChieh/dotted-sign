@@ -1,78 +1,15 @@
-/* Frame */
-
-position: relative;
-width: 221px;
-height: 838px;
-
-
-
-/* Vector */
-
-position: absolute;
-left: 44.34%;
-right: 43.89%;
-top: 0.12%;
-bottom: 50.12%;
-
-background: #FAC200;
-border: 1px solid #FAC200;
-
-
-/* Vector */
-
-position: absolute;
-left: 44.34%;
-right: 43.89%;
-top: 80.31%;
-bottom: 0.36%;
-
-background: #FAC200;
-border: 5px solid #FAC200;
-
-
-/* Vector */
-
-position: absolute;
-left: 44.34%;
-right: 43.89%;
-top: 45.58%;
-bottom: 19.69%;
-
-background: #FAC200;
-border: 5px solid #FAC200;
-
-
-/* Vector */
-
-position: absolute;
-left: 1.36%;
-right: 1.36%;
-top: 9.24%;
-bottom: 68.54%;
-
-background: #FAC200;
-border: 5px solid #FAC200;
-
-
-/* Vector */
-
-position: absolute;
-left: 1.36%;
-right: 1.36%;
-top: 38.71%;
-bottom: 39.07%;
-
-background: #FAC200;
-border: 5px solid #FAC200;
-
-
-/* Vector */
-
-position: absolute;
-left: 1.36%;
-right: 1.36%;
-top: 68.19%;
-bottom: 9.59%;
-
-background: #FAC200;
-border: 5px solid #FAC200;
+<svg width="221" height="838" viewBox="0 0 221 838" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_14_512)">
+<path d="M98 14C98 6.82031 103.82 1 111 1C118.18 1 124 6.8203 124 14V418H98V14Z" fill="#FAC200" stroke="#FAC200"/>
+<path d="M98 822C98 829.18 103.82 835 111 835C118.18 835 124 829.18 124 822V673H98V822Z" fill="#FAC200" stroke="#FAC200" stroke-width="5"/>
+<path d="M98 673H124V382H98.0001L98 673Z" fill="#FAC200" stroke="#FAC200" stroke-width="5"/>
+<path d="M3 170.5L56.75 77.4023H164.25L218 170.5L164.25 263.598H56.75L3 170.5Z" fill="#FAC200" stroke="#FAC200" stroke-width="5"/>
+<path d="M3 417.5L56.75 324.402H164.25L218 417.5L164.25 510.598H56.75L3 417.5Z" fill="#FAC200" stroke="#FAC200" stroke-width="5"/>
+<path d="M3 664.5L56.75 571.402H164.25L218 664.5L164.25 757.598H56.75L3 664.5Z" fill="#FAC200" stroke="#FAC200" stroke-width="5"/>
+</g>
+<defs>
+<clipPath id="clip0_14_512">
+<rect width="221" height="838" fill="white"/>
+</clipPath>
+</defs>
+</svg>
