@@ -66,3 +66,44 @@ export const Close = styled.img`
     background: ${Color.secondary[50]};
   }
 `
+export const AbandonContainer = styled(AuthContainer)`
+  width: 848px;
+  height: 442px;
+  padding-bottom: 80px;
+  overflow: hidden;
+`
+export const MarkIcon = styled.img`
+  width: 104px;
+  height: 104px;
+  content: url("/images/exclamation-mark.svg");
+`
+export const ContentWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+`
+export const AbandonTitle = styled.h2`
+  font-weight: bold;
+  font-size: 40px;
+  color: ${Color.blue[50]};
+`
+export const AbandonSubTitle = styled.span`
+  font-weight: bold;
+  font-size: 24px;
+  color: ${Color.blue[50]};
+`
+export const BtnWrap = styled.div`
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+`
+export const AbandonBG = styled.img`
+  content: url("/images/modal-bg.svg");
+  position: absolute;
+  width: 372px;
+  height: 253px;
+  bottom: -48px;
+  z-index: -1;
+`
