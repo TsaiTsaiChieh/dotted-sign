@@ -2,7 +2,12 @@ import {Color} from '../constants/Variables'
 import {BTN} from '../styled/Component'
 
 interface Props {
-  style?: 'main' | 'second' | 'main-yellow' | 'blue-yellow'
+  style?:
+  | 'main'
+  | 'second'
+  | 'main-yellow'
+  | 'blue-yellow'
+  | 'red'
   content: string
   padding?: string
   fz?: number
@@ -13,21 +18,26 @@ const Button = ({style = 'main', content, padding, fz, onClick}: Props) => {
   let color: string = Color.black[100]
   let hoverBg: string = Color.secondary[50]
   let hoverColor: string = Color.black[100]
+  let border: string | undefined = undefined
   if (style === 'main') hoverColor = Color.white[50]
-  if (style === 'second') {
+  else if (style === 'second') {
     bg = Color.white[50]
     color = Color.secondary[50]
     hoverBg = Color.primary[50]
     hoverColor = Color.white[50]
-  }
-  if (style === 'main-yellow') {
+  } else if (style === 'main-yellow') {
     hoverBg = Color.primary[100]
-  }
-  if (style === 'blue-yellow') {
+  } else if (style === 'blue-yellow') {
     bg = Color.blue[50]
     color = Color.white[50]
     hoverBg = Color.primary[50]
     hoverColor = Color.white[50]
+  } else if (style === 'red') {
+    bg = Color.red[50]
+    color = Color.white[50]
+    hoverBg = Color.white[50]
+    hoverColor = Color.red[50]
+    border = Color.red[50]
   }
   return (
     <BTN
@@ -36,6 +46,7 @@ const Button = ({style = 'main', content, padding, fz, onClick}: Props) => {
       padding={padding}
       hoverBg={hoverBg}
       hoverColor={hoverColor}
+      border={border}
       fz={fz}
       onClick={onClick}
     >

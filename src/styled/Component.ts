@@ -9,6 +9,7 @@ export const BTN = styled.button<{
   hoverColor: string
   padding?: string
   fz?: number
+  border?: string
 }>`
   padding: ${(props) => (props.padding ? `${props.padding}` : '21px 72px')};
   font-size: ${(props) => (props.fz ? `${props.fz}px` : '24px')};
@@ -16,6 +17,7 @@ export const BTN = styled.button<{
   color: ${(props) => props.color};
   border-radius: 3px;
   font-weight: bold;
+  border: 2px solid ${(props) => props.border ? props.border : 'none'};
   &:hover {
     background: ${(props) => props.hoverBg};
     color: ${(props) => props.hoverColor};
