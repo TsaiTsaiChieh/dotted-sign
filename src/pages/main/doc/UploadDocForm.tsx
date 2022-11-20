@@ -48,7 +48,13 @@ const UploadDocForm = () => {
         <label htmlFor='input'>
           <UploadPDF />
         </label>
-        <UploadInput hidden id='input' {...register('file')} type='file' />
+        <UploadInput
+          hidden
+          id='input'
+          accept='.pdf'
+          {...register('file')}
+          type='file'
+        />
       </HiddenInputWrap>
       <Button content={t('buttons.upload_file')} padding='10px 130px' />
       <FormError msg={errors.file?.message as string} visible={!!errors.file} />
