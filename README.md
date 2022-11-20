@@ -7,7 +7,7 @@
   <h3 align="center">點點簽</h3>
 
   <p align="center">
-    為簡易的網頁版簽名服務，支援原生和 Google 以及 FB 登入/註冊，使用者可上傳圖片或 PDF 文件，並自定義個人簽名檔，將簽署文件的簽名檔進行拖拉、放大縮小等行為，可參考 <a href="https://whimsical.com/web-canvas-MCSTdh4yz6ipVyuvrGDuLW">wireframe</a>
+    為簡易的網頁版簽名服務，支援原生和 Google 以及 FB 登入/註冊，使用者可上傳圖片或 PDF 文件，自定義個人簽名檔，簽署文件的簽名檔可以進行拖拉、放大縮小等互動，簡易流程可參考 <a href="https://whimsical.com/web-canvas-MCSTdh4yz6ipVyuvrGDuLW">wireframe</a>
     <br />
     <a href="https://dotted-sign.web.app/"><strong>Explore the website »</strong></a>
     <br />
