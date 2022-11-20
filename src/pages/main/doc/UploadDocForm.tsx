@@ -7,6 +7,7 @@ import FormError from '../../../components/FormError'
 import {uploadDocSchema} from '../../../schemas/file'
 import {useAppDispatch, useAppSelector} from '../../../store/hook'
 import {setFile} from '../../../store/reducers/persistSlice'
+import {setLoading} from '../../../store/reducers/uiSlice'
 import {
   HiddenInputWrap,
   UploadFormWrap,
@@ -30,8 +31,10 @@ const UploadDocForm = () => {
   const {t} = useTranslation()
 
   const onSubmit = async (data: UploadDocFormType) => {
+    dispatch(setLoading(true))
     const result = await getBase64(data.file[0])
     dispatch(setFile(result))
+    dispatch(setLoading(false))
   }
   const clearError = () => {
     clearErrors()
