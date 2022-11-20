@@ -19,16 +19,13 @@
 </div>
 
 ## Screenshot
-
 ![](https://i.imgur.com/O3A3PZW.png)
 
 ## 系統說明
-
 1. 安裝: `npm install` or `yarn install`
 2. 執行: `npm run start` or `yarn run start`
 
 ## 資料夾說明
-
 1. assets: 字體、中文語系檔
 2. components: 共用元件
 3. constants: 常數，如樣式的色碼
@@ -44,18 +41,14 @@
 13. utils: 共用函數
 
 ## 使用技術
-
 #### Programming Language
-
 - [JavaScript](https://www.javascript.com/)
 - [Typescript](https://www.typescriptlang.org/)
 
 #### Frontend
-
 - [React.js](https://reactjs.org/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview)
-
 - [Firebase](https://firebase.google.com/)
 - [react-i18next](https://react.i18next.com/)
 - [React Hook Form](https://react-hook-form.com/)
