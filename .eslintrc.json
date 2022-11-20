@@ -121,6 +121,7 @@
         }
       }
     ],
+    "new-cap": ["error", { "newIsCapExceptions": ["jsPDF"] }],
     "camelcase": [
       "error",
       {
