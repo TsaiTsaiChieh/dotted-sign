@@ -9,6 +9,9 @@ export const persistSlice = createSlice({
   reducers: {
     setFile: (state, {payload}: PayloadAction<string | undefined>) => {
       state.docBase64 = payload
+      state.docIsPDF = !payload ?
+        undefined :
+        payload.includes('application/pdf')
     },
     setSign: (state, {payload}: PayloadAction<string | undefined>) => {
       state.signBase64 = payload
