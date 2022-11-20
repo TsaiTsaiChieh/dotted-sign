@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 
 import {Navigation} from '../../../routes/Navigation'
 import {useAppDispatch} from '../../../store/hook'
-import {setFile} from '../../../store/reducers/persistSlice'
+import {setFile, setSign} from '../../../store/reducers/persistSlice'
 import {setStepId} from '../../../store/reducers/uiSlice'
 import {DocIcon, SuccessWrap} from '../../../styled/Docs'
 import PrevNextBtns from '../PrevNextBtns'
@@ -17,6 +17,7 @@ const Success = () => {
   }
   const nextAction = () => {
     dispatch(setStepId('3'))
+    dispatch(setSign(undefined))
     navigate(Navigation[1].path)
   }
   return (
