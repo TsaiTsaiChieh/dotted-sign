@@ -24,11 +24,11 @@ export const UploadInput = styled.input`
   cursor: pointer;
   content: url("/images/upload-file.svg");
 `
-export const UploadIcon = styled.img`
+export const UploadPDF = styled.img`
   width: 107px;
   height: 107px;
   cursor: pointer;
-  content: url("/images/upload-file.svg");
+  content: url("/images/upload-pdf.svg");
 `
 export const SuccessWrap = styled.div`
   height: 300px;
