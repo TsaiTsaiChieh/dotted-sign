@@ -33,11 +33,11 @@ const Button = ({style = 'main', content, padding, fz, onClick}: Props) => {
     hoverBg = Color.primary[50]
     hoverColor = Color.white[50]
   } else if (style === 'red') {
-    bg = Color.red[50]
-    color = Color.white[50]
-    hoverBg = Color.white[50]
-    hoverColor = Color.red[50]
+    bg = Color.white[50]
+    color = Color.red[50]
     border = Color.red[50]
+    hoverBg = Color.red[50]
+    hoverColor = Color.white[50]
   }
   return (
     <BTN
