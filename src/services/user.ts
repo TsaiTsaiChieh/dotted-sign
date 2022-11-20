@@ -4,6 +4,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
+  FacebookAuthProvider,
 } from 'firebase/auth'
 
 import {auth} from '../firebase'
@@ -61,7 +62,23 @@ export const googleLogin = async (): Promise<RegisterResType> => {
   try {
     const result = await signInWithPopup(auth, provider)
     const {user} = result
-    console.log(user)
+    return Promise.resolve({
+      uid: user.uid,
+      name: user.displayName,
+      email: user.email!,
+      photo: user.photoURL,
+    })
+  } catch (error: any) {
+    return Promise.reject(errorHandle(error))
+  }
+}
+export const fbLogin = async (): Promise<UserDataType> => {
+  const provider = new FacebookAuthProvider()
+  const auth = getAuth()
+  try {
+    const result = await signInWithPopup(auth, provider)
+    const {user} = result
+    // TODO get photo and name from FB by access token
     return Promise.resolve({
       uid: user.uid,
       name: user.displayName,
