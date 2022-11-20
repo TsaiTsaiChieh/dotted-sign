@@ -7,7 +7,6 @@ import {
 } from '../../store/reducers/uiSlice'
 import {
   FatBee,
-  FBIcon,
   RegisterTitle,
   RegisterTitleWrap,
   ThirdPartyWrap,
@@ -16,6 +15,7 @@ import {
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
+import FbLogin from './FbLogin'
 import GoogleLogin from './GoogleLogin'
 import RegisterForms from './RegisterForms'
 
@@ -49,7 +49,7 @@ const Register = () => {
         </ChangeModal>
         <ThirdPartyWrap>
           <GoogleLogin />
-          <FBIcon />
+          <FbLogin />
         </ThirdPartyWrap>
         <FatBee />
         <Close onClick={close} />

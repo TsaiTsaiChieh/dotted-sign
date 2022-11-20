@@ -8,7 +8,6 @@ import {
 import {
   LoginContainer,
   FatBee,
-  FBIcon,
   LoginTitle,
   LoginTitleWrap,
   ThirdPartyWrap,
@@ -16,6 +15,7 @@ import {
 } from '../../styled/Auth'
 import {LogoVertical} from '../../styled/Component'
 import {Close, Mask} from '../../styled/Modal'
+import FbLogin from './FbLogin'
 import GoogleLogin from './GoogleLogin'
 import LoginForms from './LoginForms'
 
@@ -49,7 +49,7 @@ const Login = () => {
         </ChangeModal>
         <ThirdPartyWrap>
           <GoogleLogin />
-          <FBIcon />
+          <FbLogin />
         </ThirdPartyWrap>
         <FatBee />
         <Close onClick={close} />
