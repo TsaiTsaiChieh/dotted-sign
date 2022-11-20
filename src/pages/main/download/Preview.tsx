@@ -65,7 +65,6 @@ const Preview = () => {
         image.onload = () => {
           fabric.Image.fromURL(docBase64, (img) => {
             const {width, height} = img
-            console.log('ok')
             canvas.setHeight(height)
             canvas.setWidth(width)
             canvas.setBackgroundImage(docBase64).renderAll()
