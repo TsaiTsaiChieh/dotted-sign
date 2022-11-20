@@ -12,7 +12,6 @@ export const UploadFormWrap = styled.form`
 `
 export const HiddenInputWrap = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -22,9 +21,8 @@ export const UploadInput = styled.input`
   width: 107px;
   height: 107px;
   cursor: pointer;
-  content: url("/images/upload-file.svg");
 `
-export const UploadPDF = styled.img`
+export const UploadPDFIcon = styled.img`
   width: 107px;
   height: 107px;
   cursor: pointer;
