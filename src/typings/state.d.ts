@@ -15,5 +15,6 @@ interface authState {
 }
 interface persistState {
   docBase64?: string
+  docIsPDF?: boolean
   signBase64?: string
 }
