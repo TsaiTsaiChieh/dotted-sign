@@ -25,8 +25,8 @@ export const InteractWrap = styled.div`
 export const InteractCard = styled.div`
   position: relative;
   width: 400px;
-  height: 400px;
-  padding: 85px 40px 265px;
+  height: 440px;
+  padding: 45px 40px 265px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
