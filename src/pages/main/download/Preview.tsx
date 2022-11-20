@@ -1,15 +1,23 @@
 import {useEffect, useRef, useState} from 'react'
 
 import {fabric} from 'fabric'
+import jsPDF from 'jspdf'
+import {useTranslation} from 'react-i18next'
 import {pdfjs} from 'react-pdf'
 
+import Button from '../../../components/Button'
 import {useAppSelector} from '../../../store/hook'
+import {CanvasContainer} from '../../../styled/Download'
 import {base64ToArrayBuffer, getPDFCanvas} from '../../../utils/helper'
 pdfjs.GlobalWorkerOptions.workerSrc =
   `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
 const Preview = () => {
+  const signSize = 100
+  const [docWidth, setDocWidth] = useState<number>(400)
+  const [docHeight, setDocHeight] = useState<number>(400)
   const mainRef = useRef(null)
+  const {t} = useTranslation()
   const {signBase64, docBase64} = useAppSelector((state) => state.persist)
   const [canvas, setCanvas] = useState<any | null>(null)
   useEffect(() => {
@@ -20,8 +28,8 @@ const Preview = () => {
   useEffect(() => {
     if (canvas && signBase64) {
       fabric.Image.fromURL(signBase64, (img) => {
-        img.scaleToWidth(100)
-        img.scaleToHeight(100)
+        img.scaleToWidth(signSize)
+        img.scaleToHeight(signSize)
         canvas.add(img).renderAll()
       })
     }
@@ -33,29 +41,37 @@ const Preview = () => {
       const updateCanvas = async () => {
         const pdfCanvas = await getPDFCanvas(arrBuffer)
         const pdfImg = new fabric.Image(pdfCanvas)
-        canvas.setWidth(pdfImg.width!)
-        canvas.setHeight(pdfImg.height!)
+        const {width, height} = pdfImg
+        setDocWidth(width!)
+        setDocHeight(height!)
+        canvas.setWidth(width!)
+        canvas.setHeight(height!)
         canvas.setBackgroundImage(pdfImg).renderAll()
       }
       updateCanvas()
     }
   }, [canvas, docBase64])
-
   // download
   const download = () => {
-    const dataURL = canvas.toDataURL({format: 'pdf'})
-    const link = document.createElement('a')
-    link.download = 'my-image.png'
-    link.href = dataURL
-    link.target = '_blank'
-    document.body.appendChild(link)
-    link.click()
-    link.parentNode?.removeChild(link)
+    const divImage = canvas.toDataURL('image/png')
+    const doc = new jsPDF()
+    const width = doc.internal.pageSize.getWidth()
+    const height = doc.internal.pageSize.getHeight()
+    doc.addImage(divImage, 'PNG', 0, 0, width, height)
+    doc.save('download.pdf')
   }
+
   return (
     <>
-      <canvas ref={mainRef} className='download-canvas' />
-      <button onClick={download}>下載</button>
+      <CanvasContainer width={docWidth} height={docHeight}>
+        <canvas ref={mainRef} />
+      </CanvasContainer>
+      <Button
+        content={t('buttons.download')}
+        onClick={download}
+        padding='10px 40px'
+        style='blue-yellow'
+      />
     </>
   )
 }
