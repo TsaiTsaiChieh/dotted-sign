@@ -11,7 +11,7 @@ import {setLoading} from '../../../store/reducers/uiSlice'
 import {
   HiddenInputWrap,
   UploadFormWrap,
-  UploadPDF,
+  UploadPDFIcon,
   UploadInput,
 } from '../../../styled/Docs'
 import {getBase64} from '../../../utils/helper'
@@ -46,12 +46,12 @@ const UploadDocForm = () => {
     <UploadFormWrap onSubmit={handleSubmit(onSubmit)} onClick={clearError}>
       <HiddenInputWrap>
         <label htmlFor='input'>
-          <UploadPDF />
+          <UploadPDFIcon />
         </label>
         <UploadInput
           hidden
           id='input'
-          accept='.pdf'
+          accept='.pdf, .jpeg, .png'
           {...register('file')}
           type='file'
         />
