@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/TsaiTsaiChieh/dotted-sign">
+    <img src="public/images/logo192.png" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center">點點簽</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+    為簡易的網頁版簽名服務，支援原生和 Google 以及 FB 登入/註冊，使用者可上傳圖片或 PDF 文件，並自定義個人簽名檔，將簽署文件的簽名檔進行拖拉、放大縮小等行為，可參考 <a href="https://whimsical.com/web-canvas-MCSTdh4yz6ipVyuvrGDuLW">wireframe</a>
+    <br />
+    <a href="https://dotted-sign.web.app/"><strong>Explore the website »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/TsaiTsaiChieh/dotted-sign/issues" target="_blank">Report Bug</a>
+    ·
+    <a href="https://skyline.github.com/TsaiTsaiChieh/2022?annotation0=2022-11-12,2022-11-21,dotted-sign%20project" target="_blank">Contributor</a>
+  </p>
+</div>
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+![](https://i.imgur.com/O3A3PZW.png)
 
-### `yarn start`
+## 系統說明
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. 安裝: `npm install` or `yarn install`
+2. 執行: `npm run start` or `yarn run start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 資料夾說明
 
-### `yarn test`
+1. assets: 字體、中文語系檔
+2. components: 共用元件
+3. constants: 常數，如樣式的色碼
+4. i18n: i18n 的設定
+5. pages: router 對應到的頁面
+6. routers: router 的設定
+7. schemas: 表單的驗證
+8. services: firebase 相關使用，如 crud 和使用者登入
+9. store: RTK 相關設定
+10. styled: styled-component 樣式設定，對應 pages 分類方式
+11. styles: SASS 樣式
+12. typings: TS 型別宣告
+13. utils: 共用函數
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 使用技術
 
-### `yarn build`
+#### Programming Language
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [JavaScript](https://www.javascript.com/)
+- [Typescript](https://www.typescriptlang.org/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React.js](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview)
 
-### `yarn eject`
+- [Firebase](https://firebase.google.com/)
+- [react-i18next](https://react.i18next.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React-PDF](https://github.com/wojtekmaj/react-pd)
+- [react-signature-canvas](https://github.com/agilgur5/react-signature-canvas)
+- [Yup](https://github.com/jquense/yup)
+- [Redux Persist](https://github.com/rt2zz/redux-persist)
+- [styled-components](https://styled-components.com/) 
+- [Sass](https://github.com/sass/dart-sass)
+## 第三方服務
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+Tsai, Tsai Chieh - jecica196@gmail.com - [Linkedin](https://www.linkedin.com/in/%E9%87%87%E6%BD%94-%E8%94%A1-211aa6151/)
+## Acknowledgments
+* Thank 水豚馬麻 for your [Figma](https://www.figma.com/file/ufW3Z7EjbU0iR4PTtcUfoT/F2E-week2-%E9%BB%9E%E9%BB%9E%E7%B0%BD?node-id=101%3A6135) support
+<p align="right">(<a href="#top">back to top</a>)</p>
