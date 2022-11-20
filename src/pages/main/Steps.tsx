@@ -24,6 +24,12 @@ const Steps = () => {
       dispatch(setStepId('3'))
     } else if (location.pathname === Navigation[1].path && signBase64) {
       dispatch(setStepId('4'))
+    } else if (
+      location.pathname === Navigation[2].path &&
+      signBase64 &&
+      signBase64
+    ) {
+      dispatch(setStepId('5'))
     }
   }, [location, docBase64, signBase64])
 
