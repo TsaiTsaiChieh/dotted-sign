@@ -26,7 +26,8 @@
     "undo": "回上一步",
     "upload_sign": "上傳簽名檔",
     "think_again": "我再想想",
-    "abandon_yes": "確定離開"
+    "abandon_yes": "確定離開",
+    "download": "下載"
   },
   "placeholders": {
     "email": "請輸入電子郵件",
