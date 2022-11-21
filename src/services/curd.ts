@@ -10,7 +10,7 @@ import {db} from '../firebase'
  * @return {Promise<string>} custom document ID or error
  */
 export const createData = async (
-  col: string,
+  col: 'users',
   id: string,
   data: any,
 ): Promise<string> => {
