@@ -31,8 +31,8 @@
   },
   "placeholders": {
     "email": "請輸入電子郵件",
-    "password": "請輸入密碼",
-    "c_password": "請再輸入一次密碼"
+    "password": "請輸入密碼 (保證未紀錄密碼)",
+    "c_password": "請再輸入一次密碼 (或者可用第三方登入)"
   },
   "hints": {
     "already_login": "已有帳號？<1>登入</1>",
