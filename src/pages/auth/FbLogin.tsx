@@ -9,7 +9,7 @@ const FbLogin = () => {
   const dispatch = useAppDispatch()
   const handleLogin = async () => {
     const user = await fbLogin()
-    await createData('user', user.email, user)
+    await createData('users', user.email, user)
     dispatch(login(user))
     dispatch(setLoginVisible(false))
     dispatch(setRegisterVisible(false))
