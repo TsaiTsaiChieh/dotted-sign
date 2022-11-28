@@ -59,7 +59,6 @@ const Preview = () => {
         updateCanvas()
       } else {
         // image
-        // FIXME when the signature be clicked will render
         const image = new Image()
         image.src = docBase64
         image.onload = () => {
@@ -67,7 +66,7 @@ const Preview = () => {
             const {width, height} = img
             canvas.setHeight(height)
             canvas.setWidth(width)
-            canvas.setBackgroundImage(docBase64).renderAll()
+            canvas.setBackgroundImage(docBase64)
           })
         }
       }
