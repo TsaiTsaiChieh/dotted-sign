@@ -34,7 +34,6 @@ const LoginForms = () => {
     } catch (error) {
       setError(t(`errors.${error}`)!)
     }
-
     dispatch(setLoading(false))
   }
   const clearError = () => {
